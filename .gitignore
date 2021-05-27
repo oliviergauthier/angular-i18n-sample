@@ -1,0 +1,5 @@
+spa-terraform/.idea
+spa-terraform/.terraform
+spa-terraform/terraform.auto.tfvars
+spa-terraform/terraform.tfstate
+spa-terraform/terraform.tfstate.backup

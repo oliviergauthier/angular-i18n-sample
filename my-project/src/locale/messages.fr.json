@@ -1,0 +1,10 @@
+{
+  "locale": "fr",
+  "translations": {
+    "login.title": "Connexion",
+    "login.field.username.label": "Nom d'utilisateur : ",
+    "login.field.username.placeholder": "Nom d'utilisateur",
+    "login.field.password.label": "Mot de passe : ",
+    "login.field.password.placeholder": "Mot de passe"
+  }
+}
