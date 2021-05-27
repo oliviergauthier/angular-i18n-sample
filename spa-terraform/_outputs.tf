@@ -3,5 +3,5 @@ output "s3_bucket" {
 }
 
 output "site_url" {
-  value = "https://angular-spa-sample.${var.route53_zone_name}"
+  value = "https://${local.cf_alias}"
 }

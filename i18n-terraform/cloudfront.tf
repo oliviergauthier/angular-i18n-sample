@@ -46,25 +46,7 @@ resource "aws_cloudfront_distribution" "this" {
 
     forwarded_values {
       query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-
-    viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
-  }
-
-  ordered_cache_behavior {
-    allowed_methods   = ["GET", "HEAD", "OPTIONS"]
-    cached_methods    = ["GET", "HEAD"]
-    target_origin_id  = aws_s3_bucket.this.bucket
-    path_pattern      = "index.html"
-
-    forwarded_values {
-      query_string = false
+      headers = ["Accept-Language", "Origin"]
       cookies {
         forward = "none"
       }
@@ -74,6 +56,12 @@ resource "aws_cloudfront_distribution" "this" {
     min_ttl                = 0
     default_ttl            = 0
     max_ttl                = 0
+
+    lambda_function_association {
+      event_type = "origin-request"
+      lambda_arn = aws_lambda_function.i18n_origin_request.arn
+      include_body = true
+    }
   }
 
   price_class = "PriceClass_100"
