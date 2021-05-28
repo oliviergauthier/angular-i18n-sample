@@ -6,3 +6,6 @@ spa-terraform/terraform.tfstate.backup
 i18n-terraform/.terraform
 i18n-terraform/.idea
 i18n-terraform/terraform.auto.tfvars
+i18n-terraform/build
+i18n-terraform/terraform.tfstate
+i18n-terraform/terraform.tfstate.backup

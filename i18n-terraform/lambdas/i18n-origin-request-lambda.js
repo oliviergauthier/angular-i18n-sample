@@ -9,13 +9,6 @@ exports.handler = (event, context, callback) => {
   
   console.log(JSON.stringify(event));
   if (!path.extname(request.uri)) {
-    locales.forEach(locale => {
-      console.log(`Check ${locale}`)
-      if (request.uri.startsWith(`/${locale}/`)) {
-        handle(request, locale, callback);
-        return;
-      }
-    });
     if (request.uri.startsWith("/fr/")) {
       handle(request, "fr", callback);
     } else if(request.uri.startsWith("/en/")) {
@@ -27,7 +20,7 @@ exports.handler = (event, context, callback) => {
     if (request.uri == "/index.html") {
       redirect(headers, callback);
     } else {
-      console.log(`Request Assets : ${request.uri}`);
+      console.log(`Request Assets : $${request.uri}`);
       callback(null, request);
     }
   }
@@ -57,7 +50,7 @@ function redirect(headers, callback) {
           location: [
             {
               key: "Location",
-              value: `https://${headers.origin[0].value}/${locale}/index.html`,
+              value: `https://${domain}/$${locale}/index.html`,
             },
           ],
         },
@@ -66,7 +59,7 @@ function redirect(headers, callback) {
 }
 
 function handle(request, locale, callback) {
-  console.log(`Request en uri : ${request.uri}`)
-  request.uri = `/${locale}/index.html`;
+  console.log(`Request en uri : $${request.uri}`)
+  request.uri = `/$${locale}/index.html`;
   callback(null, request);
 }

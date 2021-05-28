@@ -59,7 +59,7 @@ resource "aws_cloudfront_distribution" "this" {
 
     lambda_function_association {
       event_type = "origin-request"
-      lambda_arn = aws_lambda_function.i18n_origin_request.arn
+      lambda_arn = aws_lambda_function.i18n_origin_request.qualified_arn
       include_body = true
     }
   }
