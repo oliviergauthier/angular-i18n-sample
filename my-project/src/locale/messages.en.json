@@ -5,6 +5,8 @@
     "login.field.username.label": "Username : ",
     "login.field.username.placeholder": "Username",
     "login.field.password.label": "Password : ",
-    "login.field.password.placeholder": "Password"
+    "login.field.password.placeholder": "Password",
+    "messsage.title": "Your message : ",
+    "notfound.title": "Page not found"
   }
 }

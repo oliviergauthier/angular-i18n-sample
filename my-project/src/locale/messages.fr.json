@@ -5,6 +5,8 @@
     "login.field.username.label": "Nom d'utilisateur : ",
     "login.field.username.placeholder": "Nom d'utilisateur",
     "login.field.password.label": "Mot de passe : ",
-    "login.field.password.placeholder": "Mot de passe"
+    "login.field.password.placeholder": "Mot de passe",
+    "messsage.title": "Votre message : ",
+    "notfound.title": "Cette page n'existe pas"
   }
 }
